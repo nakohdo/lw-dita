@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- highlighting domain - class prefix hi-d -->
+<!--
+  add to ph element in doctype shell: 
+  b | u | i | sup | sub 
+-->
+<!--
+  add to included-domains in doctype shell:
+  (topic hi-d)
+-->
+<!-- LONG NAME: Bold content -->
+<grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
+  
+  <div>
+    <a:documentation>DOMAIN EXTENSION PATTERNS</a:documentation>
+    
+    <define name="hi-d-ph">
+      <choice>
+        <ref name="b-element"/>
+        <ref name="i-element"/>
+        <ref name="sup-element"/>
+        <ref name="sub-element"/>
+        <ref name="u-element"/>
+      </choice>
+    </define>
+    
+    <define name="ph" combine="choice">
+      <ref name="hi-d-ph"/>
+    </define>
+  </div>
+  
+  
+  <define name="b-element">
+    <element name="b">
+      <ref name="b-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="b-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ph hi-d/b "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Italic content -->
+  <define name="i-element">
+    <element name="i">
+      <ref name="i-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="i-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ph hi-d/i "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Underlined content -->
+  <define name="u-element">
+    <element name="u">
+      <ref name="u-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="u-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ph hi-d/u "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Superscript content -->
+  <define name="sup-element">
+    <element name="sup">
+      <ref name="sup-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="sup-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ph hi-d/sup "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Subscript content -->
+  <define name="sub-element">
+    <element name="sub">
+      <ref name="sub-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="sub-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ph hi-d/sub "/>
+    </optional>
+  </define>
+</grammar>

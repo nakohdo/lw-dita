@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!-- ELEMENT DECLARATIONS -->
+<!-- ============================================================= -->
+<!-- LONG NAME: Task Postrequisites -->
+<grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
+  <define name="postreq-element">
+    <element name="postreq">
+      <ref name="postreq-attlist"/>
+      <zeroOrMore>
+        <ref name="all-blocks"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="postreq-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/section task/postreq "/>
+    </optional>
+  </define>
+</grammar>

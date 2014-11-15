@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!-- DOMAINS ATTRIBUTE OVERRIDE -->
+<!-- ============================================================= -->
+<!-- ============================================================= -->
+<!-- EXTENSION POINTS -->
+<!-- ============================================================= -->
+<grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <define name="ph">
+    <ref name="ph-element"/>
+  </define>
+  <define name="filter-adds">
+    <empty/>
+  </define>
+  <!-- ============================================================= -->
+  <!-- COMMON DECLARATIONS -->
+  <!-- ============================================================= -->
+  <define name="all-inline">
+    <choice>
+      <text/>
+      <ref name="ph"/>
+    </choice>
+  </define>
+  <!-- common attributes -->
+  <define name="filters">
+    <optional>
+      <attribute name="props"/>
+    </optional>
+    <ref name="filter-adds"/>
+  </define>
+  <define name="reuse">
+    <optional>
+      <attribute name="id">
+        <data type="NMTOKEN"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="conref"/>
+    </optional>
+  </define>
+  <define name="reference-content">
+    <optional>
+      <attribute name="href"/>
+    </optional>
+    <optional>
+      <attribute name="format"/>
+    </optional>
+    <optional>
+      <attribute name="scope">
+        <choice>
+          <value>local</value>
+          <value>peer</value>
+          <value>external</value>
+        </choice>
+      </attribute>
+    </optional>
+  </define>
+  <define name="control-variables">
+    <optional>
+      <attribute name="keys"/>
+    </optional>
+  </define>
+  <define name="variable-content">
+    <optional>
+      <attribute name="keyref"/>
+    </optional>
+  </define>
+  <define name="variable-links">
+    <optional>
+      <attribute name="keyref"/>
+    </optional>
+  </define>
+  <define name="localization">
+    <optional>
+      <attribute name="dir"/>
+    </optional>
+    <optional>
+      <attribute name="xml:lang"/>
+    </optional>
+    <optional>
+      <attribute name="translate"/>
+    </optional>
+  </define>
+  <!-- ============================================================= -->
+  <!-- ELEMENT DECLARATIONS -->
+  <!-- ============================================================= -->
+  <!-- LONG NAME: Map -->
+  <define name="map-element">
+    <element name="map">
+      <ref name="map-attlist"/>
+      <optional>
+        <ref name="topicmeta-element"/>
+      </optional>
+      <zeroOrMore>
+        <ref name="topicref-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="map-attlist" combine="interleave">
+    <attribute name="id">
+      <data type="ID"/>
+    </attribute>
+    <optional>
+      <attribute name="ditaarch:DITAArchVersion" a:defaultValue="1.3"/>
+    </optional>
+    <optional>
+      <attribute name="domains" a:defaultValue="(hi-d)"/>
+    </optional>
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- map/map "/>
+    </optional>
+  </define>
+  <!--                     LONG NAME: Metadata -->
+  <define name="topicmeta-element">
+    <element name="topicmeta">
+      <ref name="topicmeta-attlist"/>
+      <ref name="navtitle-element"/>
+      <zeroOrMore>
+        <ref name="data-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="topicmeta-attlist" combine="interleave">
+    <optional>
+      <attribute name="class" a:defaultValue="- map/topicmeta "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Navigation title -->
+  <define name="navtitle-element">
+    <element name="navtitle">
+      <ref name="navtitle-attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="ph"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="navtitle-attlist" combine="interleave">
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- map/navtitle "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Data -->
+  <define name="data-element">
+    <element name="data">
+      <ref name="data-attlist"/>
+      <zeroOrMore>
+        <ref name="data-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="data-attlist" combine="interleave">
+    <optional>
+      <attribute name="name"/>
+    </optional>
+    <optional>
+      <attribute name="value"/>
+    </optional>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/data "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Phrase content -->
+  <define name="ph-element">
+    <element name="ph">
+      <ref name="ph-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="ph-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ph "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Topic or Map Reference -->
+  <define name="topicref-element">
+    <element name="topicref">
+      <ref name="topicref-attlist"/>
+      <ref name="topicmeta-element"/>
+      <zeroOrMore>
+        <ref name="topicref-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="topicref-attlist" combine="interleave">
+    <optional>
+      <attribute name="locktitle" a:defaultValue="yes">
+        <value type="string" datatypeLibrary="">yes</value>
+      </attribute>
+    </optional>
+    <ref name="reuse"/>
+    <ref name="filters"/>
+    <ref name="reference-content"/>
+    <ref name="control-variables"/>
+    <ref name="variable-links"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- map/topicref "/>
+    </optional>
+  </define>
+</grammar>
+<!--
+   
+  
+  
+-->

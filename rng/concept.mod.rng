@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!-- ELEMENT DECLARATIONS -->
+<!-- ============================================================= -->
+<!-- LONG NAME: Concept -->
+<grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <define name="concept-element">
+    <element name="concept">
+      <ref name="concept-attlist"/>
+      <ref name="title-element"/>
+      <ref name="shortdesc-element"/>
+      <ref name="conbody-element"/>
+      <zeroOrMore>
+        <ref name="concept-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="concept-attlist" combine="interleave">
+    <attribute name="id">
+      <data type="ID"/>
+    </attribute>
+    <optional>
+      <attribute name="ditaarch:DITAArchVersion" a:defaultValue="1.3"/>
+    </optional>
+    <optional>
+      <attribute name="domains" a:defaultValue=" "/>
+    </optional>
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/topic concept/concept "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Concept Body -->
+  <define name="conbody-element">
+    <element name="conbody">
+      <ref name="conbody-attlist"/>
+      <zeroOrMore>
+        <ref name="all-blocks"/>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="section-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="conbody-attlist" combine="interleave">
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/body concept/conbody "/>
+    </optional>
+  </define>
+</grammar>

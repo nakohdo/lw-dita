@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!-- DOMAINS ATTRIBUTE OVERRIDE -->
+<!-- ============================================================= -->
+<!-- ============================================================= -->
+<!-- EXTENSION POINTS -->
+<!-- ============================================================= -->
+<grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <define name="ph">
+    <ref name="ph-element"/>
+  </define>
+  <define name="object">
+    <ref name="object-element"/>
+  </define>
+  <define name="filter-adds">
+    <empty/>
+  </define>
+  <!-- ============================================================= -->
+  <!-- COMMON DECLARATIONS -->
+  <!-- ============================================================= -->
+  <!-- common content models -->
+  <define name="common-inline">
+    <choice>
+      <text/>
+      <ref name="ph"/>
+      <ref name="image-element"/>
+      <ref name="data-element"/>
+    </choice>
+  </define>
+  <define name="all-inline">
+    <choice>
+      <text/>
+      <ref name="ph"/>
+      <ref name="image-element"/>
+      <ref name="xref-element"/>
+      <ref name="data-element"/>
+    </choice>
+  </define>
+  <define name="common-blocks">
+    <choice>
+      <ref name="p-element"/>
+      <ref name="ul-element"/>
+      <ref name="ol-element"/>
+      <ref name="dl-element"/>
+      <ref name="pre-element"/>
+      <ref name="object"/>
+    </choice>
+  </define>
+  <define name="all-blocks">
+    <choice>
+      <ref name="p-element"/>
+      <ref name="ul-element"/>
+      <ref name="ol-element"/>
+      <ref name="dl-element"/>
+      <ref name="pre-element"/>
+      <ref name="object"/>
+      <ref name="simpletable-element"/>
+    </choice>
+  </define>
+  <define name="nested-blocks">
+    <choice>
+      <ref name="p-element"/>
+      <ref name="ul-element"/>
+      <ref name="ol-element"/>
+      <ref name="dl-element"/>
+      <ref name="pre-element"/>
+      <ref name="object"/>
+      <ref name="simpletable-element"/>
+    </choice>
+  </define>
+  <!-- common attributes -->
+  <define name="filters">
+    <optional>
+      <attribute name="props"/>
+    </optional>
+    <ref name="filter-adds"/>
+  </define>
+  <define name="reuse">
+    <optional>
+      <attribute name="id">
+        <data type="NMTOKEN"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="conref"/>
+    </optional>
+  </define>
+  <define name="variable-content">
+    <optional>
+      <attribute name="keyref"/>
+    </optional>
+  </define>
+  <define name="variable-links">
+    <optional>
+      <attribute name="keyref"/>
+    </optional>
+  </define>
+  <define name="localization">
+    <optional>
+      <attribute name="dir"/>
+    </optional>
+    <optional>
+      <attribute name="xml:lang"/>
+    </optional>
+    <optional>
+      <attribute name="translate"/>
+    </optional>
+  </define>
+  <!-- ============================================================= -->
+  <!-- ELEMENT DECLARATIONS -->
+  <!-- ============================================================= -->
+  <!-- LONG NAME: Topic -->
+  <define name="topic-element">
+    <element name="topic">
+      <ref name="topic-attlist"/>
+      <ref name="title-element"/>
+      <ref name="shortdesc-element"/>
+      <ref name="body-element"/>
+      <zeroOrMore>
+        <ref name="topic-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="topic-attlist" combine="interleave">
+    <attribute name="id">
+      <data type="ID"/>
+    </attribute>
+    <optional>
+      <attribute name="ditaarch:DITAArchVersion" a:defaultValue="1.3"/>
+    </optional>
+    <optional>
+      <attribute name="domains" a:defaultValue=" "/>
+    </optional>
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/topic "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Title -->
+  <define name="title-element">
+    <element name="title">
+      <ref name="title-attlist"/>
+      <zeroOrMore>
+        <ref name="common-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="title-attlist" combine="interleave">
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/title "/>
+    </optional>
+  </define>
+  <!--                     LONG NAME: Short description -->
+  <define name="shortdesc-element">
+    <element name="shortdesc">
+      <ref name="shortdesc-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="shortdesc-attlist" combine="interleave">
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/shortdesc "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Body -->
+  <define name="body-element">
+    <element name="body">
+      <ref name="body-attlist"/>
+      <zeroOrMore>
+        <ref name="all-blocks"/>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="section-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="body-attlist" combine="interleave">
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/body "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Section -->
+  <define name="section-element">
+    <element name="section">
+      <ref name="section-attlist"/>
+      <optional>
+        <ref name="title-element"/>
+      </optional>
+      <zeroOrMore>
+        <ref name="all-blocks"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="section-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/section "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Paragraph -->
+  <define name="p-element">
+    <element name="p">
+      <ref name="p-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="p-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/p "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Unordered list -->
+  <define name="ul-element">
+    <element name="ul">
+      <ref name="ul-attlist"/>
+      <zeroOrMore>
+        <ref name="li-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="ul-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ul "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Ordered list -->
+  <define name="ol-element">
+    <element name="ol">
+      <ref name="ol-attlist"/>
+      <zeroOrMore>
+        <ref name="li-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="ol-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ol "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: List item -->
+  <define name="li-element">
+    <element name="li">
+      <ref name="li-attlist"/>
+      <zeroOrMore>
+        <ref name="nested-blocks"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="li-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/li "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Description list -->
+  <define name="dl-element">
+    <element name="dl">
+      <ref name="dl-attlist"/>
+      <zeroOrMore>
+        <ref name="dlentry-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="dl-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/dl "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Description entry -->
+  <define name="dlentry-element">
+    <element name="dlentry">
+      <ref name="dlentry-attlist"/>
+      <ref name="dt-element"/>
+      <ref name="dd-element"/>
+    </element>
+  </define>
+  <define name="dlentry-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/dlentry "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Description term -->
+  <define name="dt-element">
+    <element name="dt">
+      <ref name="dt-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="dt-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/dt "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Description -->
+  <define name="dd-element">
+    <element name="dd">
+      <ref name="dd-attlist"/>
+      <zeroOrMore>
+        <ref name="nested-blocks"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="dd-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/dd "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Preformatted content -->
+  <define name="pre-element">
+    <element name="pre">
+      <ref name="pre-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="pre-attlist" combine="interleave">
+    <optional>
+      <attribute name="xml:space" a:defaultValue="preserve">
+        <value>preserve</value>
+      </attribute>
+    </optional>
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/pre "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Table -->
+  <define name="simpletable-element">
+    <element name="simpletable">
+      <ref name="simpletable-attlist"/>
+      <optional>
+        <ref name="sthead-element"/>
+      </optional>
+      <zeroOrMore>
+        <ref name="strow-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="simpletable-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/simpletable "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Table header row -->
+  <define name="sthead-element">
+    <element name="sthead">
+      <ref name="sthead-attlist"/>
+      <zeroOrMore>
+        <ref name="stentry-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="sthead-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/sthead "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Table row -->
+  <define name="strow-element">
+    <element name="strow">
+      <ref name="strow-attlist"/>
+      <zeroOrMore>
+        <ref name="stentry-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="strow-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/strow "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Table cell -->
+  <define name="stentry-element">
+    <element name="stentry">
+      <ref name="stentry-attlist"/>
+      <zeroOrMore>
+        <ref name="common-blocks"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="stentry-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/stentry "/>
+    </optional>
+  </define>
+  <!--                     LONG NAME: Object -->
+  <define name="object-element">
+    <element name="object">
+      <ref name="object-attlist"/>
+      <optional>
+        <ref name="desc-element"/>
+      </optional>
+      <zeroOrMore>
+        <ref name="param-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="object-attlist" combine="interleave">
+    <optional>
+      <attribute name="data"/>
+    </optional>
+    <optional>
+      <attribute name="type"/>
+    </optional>
+    <optional>
+      <attribute name="height">
+        <data type="NMTOKEN"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="width">
+        <data type="NMTOKEN"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="name"/>
+    </optional>
+    <optional>
+      <attribute name="usemap"/>
+    </optional>
+    <ref name="localization"/>
+    <ref name="filters"/>
+    <ref name="reuse"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/object "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Description -->
+  <define name="desc-element">
+    <element name="desc">
+      <ref name="desc-attlist"/>
+      <zeroOrMore>
+        <ref name="common-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="desc-attlist" combine="interleave">
+    <ref name="localization"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/desc "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Object parameter -->
+  <define name="param-element">
+    <element name="param">
+      <ref name="param-attlist"/>
+      <empty/>
+    </element>
+  </define>
+  <define name="param-attlist" combine="interleave">
+    <attribute name="name"/>
+    <optional>
+      <attribute name="value"/>
+    </optional>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/param "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Phrase content -->
+  <define name="ph-element">
+    <element name="ph">
+      <ref name="ph-attlist"/>
+      <zeroOrMore>
+        <ref name="all-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="ph-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/ph "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Image -->
+  <define name="image-element">
+    <element name="image">
+      <ref name="image-attlist"/>
+      <optional>
+        <ref name="alt-element"/>
+      </optional>
+    </element>
+  </define>
+  <define name="image-attlist" combine="interleave">
+    <optional>
+      <attribute name="href"/>
+    </optional>
+    <optional>
+      <attribute name="height">
+        <data type="NMTOKEN"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="width">
+        <data type="NMTOKEN"/>
+      </attribute>
+    </optional>
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/image "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Alternative content -->
+  <define name="alt-element">
+    <element name="alt">
+      <ref name="alt-attlist"/>
+      <zeroOrMore>
+        <ref name="common-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="alt-attlist" combine="interleave">
+    <ref name="localization"/>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/alt "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Data -->
+  <define name="data-element">
+    <element name="data">
+      <ref name="data-attlist"/>
+      <zeroOrMore>
+        <ref name="data-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="data-attlist" combine="interleave">
+    <optional>
+      <attribute name="name"/>
+    </optional>
+    <optional>
+      <attribute name="value"/>
+    </optional>
+    <ref name="variable-content"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/data "/>
+    </optional>
+  </define>
+  <!-- LONG NAME: Reference -->
+  <define name="xref-element">
+    <element name="xref">
+      <ref name="xref-attlist"/>
+      <zeroOrMore>
+        <ref name="common-inline"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="xref-attlist" combine="interleave">
+    <optional>
+      <attribute name="href"/>
+    </optional>
+    <optional>
+      <attribute name="format"/>
+    </optional>
+    <optional>
+      <attribute name="scope">
+        <choice>
+          <value>local</value>
+          <value>peer</value>
+          <value>external</value>
+        </choice>
+      </attribute>
+    </optional>
+    <ref name="localization"/>
+    <ref name="variable-links"/>
+    <optional>
+      <attribute name="class" a:defaultValue="- topic/xref "/>
+    </optional>
+  </define>
+</grammar>
