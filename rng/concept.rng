@@ -51,18 +51,38 @@
 <!-- INCLUDE TOPIC AND SECTION MODULES -->
 <!-- ============================================================= -->
 <!-- Embed topic module to get generic elements -->
-<grammar xmlns="http://relaxng.org/ns/structure/1.0">
-  <start>
-    <ref name="concept-element"/>
-  </start>
-  <include href="topic.mod.rng"/>
-  <!-- Embed concept module to get concept elements -->
-  <include href="concept.mod.rng"/>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+  xmlns:dita="http://dita.oasis-open.org/architecture/2005/"
+  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+  
+  <div>
+    <a:documentation>ROOT ELEMENT DECLARATION</a:documentation>
+    <start>
+      <ref name="concept-element"/>
+    </start>
+  </div>
+  
+  <div>
+    <a:documentation>DOMAINS ATTRIBUTE</a:documentation>
+    <define name="domains-att" combine="interleave">
+      <optional>
+        <attribute name="domains"
+          a:defaultValue=" (topic concept) (topic topic) "/>
+      </optional>
+    </define>
+  </div>
+  
+  <div>
+    <a:documentation>MODULE INCLUSIONS</a:documentation>
+    <include href="topic.mod.rng"/>
+    <!-- Embed concept module to get concept elements -->
+    <include href="concept.mod.rng"/>
+    <!-- Embed section modules -->
+    <!-- none -->
+    <!-- ============================================================= -->
+    <!-- INCLUDE PHRASE MODULES -->
+    <!-- ============================================================= -->
+    <!-- none out of the box -->
+    <!-- ================== End DITA LW Reference DTD  ====================== -->
+  </div>
 </grammar>
-<!-- Embed section modules -->
-<!-- none -->
-<!-- ============================================================= -->
-<!-- INCLUDE PHRASE MODULES -->
-<!-- ============================================================= -->
-<!-- none out of the box -->
-<!-- ================== End DITA LW Reference DTD  ====================== -->
