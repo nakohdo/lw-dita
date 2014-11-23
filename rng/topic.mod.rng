@@ -112,7 +112,7 @@
   <!-- LONG NAME: Topic -->
   <define name="topic.element">
     <element name="topic">
-      <ref name="topic-attlist"/>
+      <ref name="topic.attlist"/>
       <ref name="title.element"/>
       <ref name="shortdesc.element"/>
       <ref name="body.element"/>
@@ -121,7 +121,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="topic-attlist" combine="interleave">
+  <define name="topic.attlist" combine="interleave">
     <attribute name="id">
       <data type="ID"/>
     </attribute>
@@ -139,13 +139,13 @@
   <!-- LONG NAME: Title -->
   <define name="title.element">
     <element name="title">
-      <ref name="title-attlist"/>
+      <ref name="title.attlist"/>
       <zeroOrMore>
         <ref name="common-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="title-attlist" combine="interleave">
+  <define name="title.attlist" combine="interleave">
     <ref name="localization"/>
     <optional>
       <attribute name="class" a:defaultValue="- topic/title "/>
@@ -154,13 +154,13 @@
   <!--                     LONG NAME: Short description -->
   <define name="shortdesc.element">
     <element name="shortdesc">
-      <ref name="shortdesc-attlist"/>
+      <ref name="shortdesc.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="shortdesc-attlist" combine="interleave">
+  <define name="shortdesc.attlist" combine="interleave">
     <ref name="localization"/>
     <optional>
       <attribute name="class" a:defaultValue="- topic/shortdesc "/>
@@ -169,7 +169,7 @@
   <!-- LONG NAME: Body -->
   <define name="body.element">
     <element name="body">
-      <ref name="body-attlist"/>
+      <ref name="body.attlist"/>
       <zeroOrMore>
         <ref name="all-blocks"/>
       </zeroOrMore>
@@ -178,7 +178,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="body-attlist" combine="interleave">
+  <define name="body.attlist" combine="interleave">
     <ref name="localization"/>
     <optional>
       <attribute name="class" a:defaultValue="- topic/body "/>
@@ -187,7 +187,7 @@
   <!-- LONG NAME: Section -->
   <define name="section.element">
     <element name="section">
-      <ref name="section-attlist"/>
+      <ref name="section.attlist"/>
       <optional>
         <ref name="title.element"/>
       </optional>
@@ -196,7 +196,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="section-attlist" combine="interleave">
+  <define name="section.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -207,13 +207,13 @@
   <!-- LONG NAME: Paragraph -->
   <define name="p.element">
     <element name="p">
-      <ref name="p-attlist"/>
+      <ref name="p.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="p-attlist" combine="interleave">
+  <define name="p.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -224,13 +224,13 @@
   <!-- LONG NAME: Unordered list -->
   <define name="ul.element">
     <element name="ul">
-      <ref name="ul-attlist"/>
+      <ref name="ul.attlist"/>
       <zeroOrMore>
         <ref name="li.element"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="ul-attlist" combine="interleave">
+  <define name="ul.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -241,13 +241,13 @@
   <!-- LONG NAME: Ordered list -->
   <define name="ol.element">
     <element name="ol">
-      <ref name="ol-attlist"/>
+      <ref name="ol.attlist"/>
       <zeroOrMore>
         <ref name="li.element"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="ol-attlist" combine="interleave">
+  <define name="ol.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -258,13 +258,13 @@
   <!-- LONG NAME: List item -->
   <define name="li.element">
     <element name="li">
-      <ref name="li-attlist"/>
+      <ref name="li.attlist"/>
       <zeroOrMore>
         <ref name="nested-blocks"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="li-attlist" combine="interleave">
+  <define name="li.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -275,13 +275,13 @@
   <!-- LONG NAME: Description list -->
   <define name="dl.element">
     <element name="dl">
-      <ref name="dl-attlist"/>
+      <ref name="dl.attlist"/>
       <zeroOrMore>
         <ref name="dlentry.element"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="dl-attlist" combine="interleave">
+  <define name="dl.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -292,12 +292,12 @@
   <!-- LONG NAME: Description entry -->
   <define name="dlentry.element">
     <element name="dlentry">
-      <ref name="dlentry-attlist"/>
+      <ref name="dlentry.attlist"/>
       <ref name="dt.element"/>
       <ref name="dd.element"/>
     </element>
   </define>
-  <define name="dlentry-attlist" combine="interleave">
+  <define name="dlentry.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -308,13 +308,13 @@
   <!-- LONG NAME: Description term -->
   <define name="dt.element">
     <element name="dt">
-      <ref name="dt-attlist"/>
+      <ref name="dt.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="dt-attlist" combine="interleave">
+  <define name="dt.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -325,13 +325,13 @@
   <!-- LONG NAME: Description -->
   <define name="dd.element">
     <element name="dd">
-      <ref name="dd-attlist"/>
+      <ref name="dd.attlist"/>
       <zeroOrMore>
         <ref name="nested-blocks"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="dd-attlist" combine="interleave">
+  <define name="dd.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -342,13 +342,13 @@
   <!-- LONG NAME: Preformatted content -->
   <define name="pre.element">
     <element name="pre">
-      <ref name="pre-attlist"/>
+      <ref name="pre.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="pre-attlist" combine="interleave">
+  <define name="pre.attlist" combine="interleave">
     <optional>
       <attribute name="xml:space" a:defaultValue="preserve">
         <value>preserve</value>
@@ -364,7 +364,7 @@
   <!-- LONG NAME: Table -->
   <define name="simpletable.element">
     <element name="simpletable">
-      <ref name="simpletable-attlist"/>
+      <ref name="simpletable.attlist"/>
       <optional>
         <ref name="sthead.element"/>
       </optional>
@@ -373,7 +373,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="simpletable-attlist" combine="interleave">
+  <define name="simpletable.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -384,13 +384,13 @@
   <!-- LONG NAME: Table header row -->
   <define name="sthead.element">
     <element name="sthead">
-      <ref name="sthead-attlist"/>
+      <ref name="sthead.attlist"/>
       <zeroOrMore>
         <ref name="stentry.element"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="sthead-attlist" combine="interleave">
+  <define name="sthead.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -401,13 +401,13 @@
   <!-- LONG NAME: Table row -->
   <define name="strow.element">
     <element name="strow">
-      <ref name="strow-attlist"/>
+      <ref name="strow.attlist"/>
       <zeroOrMore>
         <ref name="stentry.element"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="strow-attlist" combine="interleave">
+  <define name="strow.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -418,13 +418,13 @@
   <!-- LONG NAME: Table cell -->
   <define name="stentry.element">
     <element name="stentry">
-      <ref name="stentry-attlist"/>
+      <ref name="stentry.attlist"/>
       <zeroOrMore>
         <ref name="common-blocks"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="stentry-attlist" combine="interleave">
+  <define name="stentry.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>
@@ -435,7 +435,7 @@
   <!--                     LONG NAME: Object -->
   <define name="object.element">
     <element name="object">
-      <ref name="object-attlist"/>
+      <ref name="object.attlist"/>
       <optional>
         <ref name="desc.element"/>
       </optional>
@@ -444,7 +444,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="object-attlist" combine="interleave">
+  <define name="object.attlist" combine="interleave">
     <optional>
       <attribute name="data"/>
     </optional>
@@ -477,13 +477,13 @@
   <!-- LONG NAME: Description -->
   <define name="desc.element">
     <element name="desc">
-      <ref name="desc-attlist"/>
+      <ref name="desc.attlist"/>
       <zeroOrMore>
         <ref name="common-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="desc-attlist" combine="interleave">
+  <define name="desc.attlist" combine="interleave">
     <ref name="localization"/>
     <optional>
       <attribute name="class" a:defaultValue="- topic/desc "/>
@@ -492,11 +492,11 @@
   <!-- LONG NAME: Object parameter -->
   <define name="param.element">
     <element name="param">
-      <ref name="param-attlist"/>
+      <ref name="param.attlist"/>
       <empty/>
     </element>
   </define>
-  <define name="param-attlist" combine="interleave">
+  <define name="param.attlist" combine="interleave">
     <attribute name="name"/>
     <optional>
       <attribute name="value"/>
@@ -508,13 +508,13 @@
   <!-- LONG NAME: Phrase content -->
   <define name="ph.element">
     <element name="ph">
-      <ref name="ph-attlist"/>
+      <ref name="ph.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="ph-attlist" combine="interleave">
+  <define name="ph.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="variable-content"/>
     <optional>
@@ -524,13 +524,13 @@
   <!-- LONG NAME: Image -->
   <define name="image.element">
     <element name="image">
-      <ref name="image-attlist"/>
+      <ref name="image.attlist"/>
       <optional>
         <ref name="alt.element"/>
       </optional>
     </element>
   </define>
-  <define name="image-attlist" combine="interleave">
+  <define name="image.attlist" combine="interleave">
     <optional>
       <attribute name="href"/>
     </optional>
@@ -553,13 +553,13 @@
   <!-- LONG NAME: Alternative content -->
   <define name="alt.element">
     <element name="alt">
-      <ref name="alt-attlist"/>
+      <ref name="alt.attlist"/>
       <zeroOrMore>
         <ref name="common-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="alt-attlist" combine="interleave">
+  <define name="alt.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="variable-content"/>
     <optional>
@@ -569,13 +569,13 @@
   <!-- LONG NAME: Data -->
   <define name="data.element">
     <element name="data">
-      <ref name="data-attlist"/>
+      <ref name="data.attlist"/>
       <zeroOrMore>
         <ref name="data.element"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="data-attlist" combine="interleave">
+  <define name="data.attlist" combine="interleave">
     <optional>
       <attribute name="name"/>
     </optional>
@@ -590,13 +590,13 @@
   <!-- LONG NAME: Reference -->
   <define name="xref.element">
     <element name="xref">
-      <ref name="xref-attlist"/>
+      <ref name="xref.attlist"/>
       <zeroOrMore>
         <ref name="common-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="xref-attlist" combine="interleave">
+  <define name="xref.attlist" combine="interleave">
     <optional>
       <attribute name="href"/>
     </optional>

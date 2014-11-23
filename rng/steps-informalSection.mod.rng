@@ -6,7 +6,7 @@
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
   <define name="steps-informal.element">
     <element name="steps-informal">
-      <ref name="steps-informal-attlist"/>
+      <ref name="steps-informal.attlist"/>
       <optional>
         <ref name="p.element"/>
       </optional>
@@ -16,7 +16,7 @@
       </choice>
     </element>
   </define>
-  <define name="steps-informal-attlist" combine="interleave">
+  <define name="steps-informal.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>

@@ -6,7 +6,7 @@
 <grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <define name="reference.element">
     <element name="reference">
-      <ref name="reference-attlist"/>
+      <ref name="reference.attlist"/>
       <ref name="title.element"/>
       <ref name="shortdesc.element"/>
       <ref name="refbody.element"/>
@@ -15,7 +15,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="reference-attlist" combine="interleave">
+  <define name="reference.attlist" combine="interleave">
     <attribute name="id">
       <data type="ID"/>
     </attribute>
@@ -33,7 +33,7 @@
   <!-- LONG NAME: Reference Body -->
   <define name="refbody.element">
     <element name="refbody">
-      <ref name="refbody-attlist"/>
+      <ref name="refbody.attlist"/>
       <optional>
         <ref name="refsyn.element"/>
       </optional>
@@ -42,7 +42,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="refbody-attlist" combine="interleave">
+  <define name="refbody.attlist" combine="interleave">
     <ref name="localization"/>
     <optional>
       <attribute name="class" a:defaultValue="- topic/body reference/refbody "/>

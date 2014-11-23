@@ -6,13 +6,13 @@
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
   <define name="prereq.element">
     <element name="prereq">
-      <ref name="prereq-attlist"/>
+      <ref name="prereq.attlist"/>
       <zeroOrMore>
         <ref name="all-blocks"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="prereq-attlist" combine="interleave">
+  <define name="prereq.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="filters"/>
     <ref name="reuse"/>

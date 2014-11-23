@@ -6,7 +6,7 @@
 <grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <define name="task.element">
     <element name="task">
-      <ref name="task-attlist"/>
+      <ref name="task.attlist"/>
       <ref name="title.element"/>
       <ref name="shortdesc.element"/>
       <ref name="taskbody.element"/>
@@ -15,7 +15,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="task-attlist" combine="interleave">
+  <define name="task.attlist" combine="interleave">
     <attribute name="id">
       <data type="ID"/>
     </attribute>
@@ -33,7 +33,7 @@
   <!-- LONG NAME: Task Body -->
   <define name="taskbody.element">
     <element name="taskbody">
-      <ref name="taskbody-attlist"/>
+      <ref name="taskbody.attlist"/>
       <optional>
         <ref name="prereq.element"/>
       </optional>
@@ -54,7 +54,7 @@
       </optional>
     </element>
   </define>
-  <define name="taskbody-attlist" combine="interleave">
+  <define name="taskbody.attlist" combine="interleave">
     <ref name="localization"/>
     <optional>
       <attribute name="class" a:defaultValue="- topic/body task/taskbody "/>

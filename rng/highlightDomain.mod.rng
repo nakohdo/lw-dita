@@ -32,13 +32,13 @@
   
   <define name="b.element">
     <element name="b">
-      <ref name="b-attlist"/>
+      <ref name="b.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="b-attlist" combine="interleave">
+  <define name="b.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="variable-content"/>
     <optional>
@@ -48,13 +48,13 @@
   <!-- LONG NAME: Italic content -->
   <define name="i.element">
     <element name="i">
-      <ref name="i-attlist"/>
+      <ref name="i.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="i-attlist" combine="interleave">
+  <define name="i.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="variable-content"/>
     <optional>
@@ -64,13 +64,13 @@
   <!-- LONG NAME: Underlined content -->
   <define name="u.element">
     <element name="u">
-      <ref name="u-attlist"/>
+      <ref name="u.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="u-attlist" combine="interleave">
+  <define name="u.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="variable-content"/>
     <optional>
@@ -80,13 +80,13 @@
   <!-- LONG NAME: Superscript content -->
   <define name="sup.element">
     <element name="sup">
-      <ref name="sup-attlist"/>
+      <ref name="sup.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="sup-attlist" combine="interleave">
+  <define name="sup.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="variable-content"/>
     <optional>
@@ -96,13 +96,13 @@
   <!-- LONG NAME: Subscript content -->
   <define name="sub.element">
     <element name="sub">
-      <ref name="sub-attlist"/>
+      <ref name="sub.attlist"/>
       <zeroOrMore>
         <ref name="all-inline"/>
       </zeroOrMore>
     </element>
   </define>
-  <define name="sub-attlist" combine="interleave">
+  <define name="sub.attlist" combine="interleave">
     <ref name="localization"/>
     <ref name="variable-content"/>
     <optional>
