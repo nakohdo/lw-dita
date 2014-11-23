@@ -16,11 +16,11 @@
     
     <define name="hi-d-ph">
       <choice>
-        <ref name="b-element"/>
-        <ref name="i-element"/>
-        <ref name="sup-element"/>
-        <ref name="sub-element"/>
-        <ref name="u-element"/>
+        <ref name="b.element"/>
+        <ref name="i.element"/>
+        <ref name="sup.element"/>
+        <ref name="sub.element"/>
+        <ref name="u.element"/>
       </choice>
     </define>
     
@@ -30,7 +30,7 @@
   </div>
   
   
-  <define name="b-element">
+  <define name="b.element">
     <element name="b">
       <ref name="b-attlist"/>
       <zeroOrMore>
@@ -46,7 +46,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Italic content -->
-  <define name="i-element">
+  <define name="i.element">
     <element name="i">
       <ref name="i-attlist"/>
       <zeroOrMore>
@@ -62,7 +62,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Underlined content -->
-  <define name="u-element">
+  <define name="u.element">
     <element name="u">
       <ref name="u-attlist"/>
       <zeroOrMore>
@@ -78,7 +78,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Superscript content -->
-  <define name="sup-element">
+  <define name="sup.element">
     <element name="sup">
       <ref name="sup-attlist"/>
       <zeroOrMore>
@@ -94,7 +94,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Subscript content -->
-  <define name="sub-element">
+  <define name="sub.element">
     <element name="sub">
       <ref name="sub-attlist"/>
       <zeroOrMore>

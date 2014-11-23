@@ -4,14 +4,14 @@
 <!-- ============================================================= -->
 <!--                     LONG NAME: Task -->
 <grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-  <define name="task-element">
+  <define name="task.element">
     <element name="task">
       <ref name="task-attlist"/>
-      <ref name="title-element"/>
-      <ref name="shortdesc-element"/>
-      <ref name="taskbody-element"/>
+      <ref name="title.element"/>
+      <ref name="shortdesc.element"/>
+      <ref name="taskbody.element"/>
       <zeroOrMore>
-        <ref name="task-element"/>
+        <ref name="task.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -31,26 +31,26 @@
     </optional>
   </define>
   <!-- LONG NAME: Task Body -->
-  <define name="taskbody-element">
+  <define name="taskbody.element">
     <element name="taskbody">
       <ref name="taskbody-attlist"/>
       <optional>
-        <ref name="prereq-element"/>
+        <ref name="prereq.element"/>
       </optional>
       <optional>
-        <ref name="context-element"/>
+        <ref name="context.element"/>
       </optional>
       <optional>
-        <ref name="steps-informal-element"/>
+        <ref name="steps-informal.element"/>
       </optional>
       <optional>
-        <ref name="result-element"/>
+        <ref name="result.element"/>
       </optional>
       <optional>
-        <ref name="example-element"/>
+        <ref name="example.element"/>
       </optional>
       <optional>
-        <ref name="postreq-element"/>
+        <ref name="postreq.element"/>
       </optional>
     </element>
   </define>

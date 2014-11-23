@@ -4,7 +4,7 @@
 <!-- ============================================================= -->
 <!-- LONG NAME: Task Prerequisites -->
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
-  <define name="prereq-element">
+  <define name="prereq.element">
     <element name="prereq">
       <ref name="prereq-attlist"/>
       <zeroOrMore>

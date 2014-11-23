@@ -4,7 +4,7 @@
 <!-- ============================================================= -->
 <!-- LONG NAME: Task Result -->
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
-  <define name="result-element">
+  <define name="result.element">
     <element name="result">
       <ref name="result-attlist"/>
       <zeroOrMore>

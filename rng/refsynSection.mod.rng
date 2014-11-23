@@ -4,11 +4,11 @@
 <!-- ============================================================= -->
 <!-- LONG NAME: Reference Syntax -->
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
-  <define name="refsyn-element">
+  <define name="refsyn.element">
     <element name="refsyn">
       <ref name="refsyn-attlist"/>
       <optional>
-        <ref name="title-element"/>
+        <ref name="title.element"/>
       </optional>
       <zeroOrMore>
         <ref name="all-blocks"/>

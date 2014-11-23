@@ -49,7 +49,7 @@
 <!-- Embed topic module to get generic elements -->
 <grammar xmlns="http://relaxng.org/ns/structure/1.0">
   <start>
-    <ref name="task-element"/>
+    <ref name="task.element"/>
   </start>
   <include href="topic.mod.rng"/>
   <!-- Embed task module to get task elements -->

@@ -7,7 +7,7 @@
 <!-- ============================================================= -->
 <grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <define name="ph">
-    <ref name="ph-element"/>
+    <ref name="ph.element"/>
   </define>
   <define name="filter-adds">
     <empty/>
@@ -85,14 +85,14 @@
   <!-- ELEMENT DECLARATIONS -->
   <!-- ============================================================= -->
   <!-- LONG NAME: Map -->
-  <define name="map-element">
+  <define name="map.element">
     <element name="map">
       <ref name="map-attlist"/>
       <optional>
-        <ref name="topicmeta-element"/>
+        <ref name="topicmeta.element"/>
       </optional>
       <zeroOrMore>
-        <ref name="topicref-element"/>
+        <ref name="topicref.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -112,12 +112,12 @@
     </optional>
   </define>
   <!--                     LONG NAME: Metadata -->
-  <define name="topicmeta-element">
+  <define name="topicmeta.element">
     <element name="topicmeta">
       <ref name="topicmeta-attlist"/>
-      <ref name="navtitle-element"/>
+      <ref name="navtitle.element"/>
       <zeroOrMore>
-        <ref name="data-element"/>
+        <ref name="data.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -127,7 +127,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Navigation title -->
-  <define name="navtitle-element">
+  <define name="navtitle.element">
     <element name="navtitle">
       <ref name="navtitle-attlist"/>
       <zeroOrMore>
@@ -145,11 +145,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Data -->
-  <define name="data-element">
+  <define name="data.element">
     <element name="data">
       <ref name="data-attlist"/>
       <zeroOrMore>
-        <ref name="data-element"/>
+        <ref name="data.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -166,7 +166,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Phrase content -->
-  <define name="ph-element">
+  <define name="ph.element">
     <element name="ph">
       <ref name="ph-attlist"/>
       <zeroOrMore>
@@ -182,12 +182,12 @@
     </optional>
   </define>
   <!-- LONG NAME: Topic or Map Reference -->
-  <define name="topicref-element">
+  <define name="topicref.element">
     <element name="topicref">
       <ref name="topicref-attlist"/>
-      <ref name="topicmeta-element"/>
+      <ref name="topicmeta.element"/>
       <zeroOrMore>
-        <ref name="topicref-element"/>
+        <ref name="topicref.element"/>
       </zeroOrMore>
     </element>
   </define>

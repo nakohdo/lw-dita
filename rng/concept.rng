@@ -58,7 +58,7 @@
   <div>
     <a:documentation>ROOT ELEMENT DECLARATION</a:documentation>
     <start>
-      <ref name="concept-element"/>
+      <ref name="concept.element"/>
     </start>
   </div>
   

@@ -20,7 +20,7 @@
 <!-- hi-d -->
 <grammar xmlns="http://relaxng.org/ns/structure/1.0">
   <start>
-    <ref name="map-element"/>
+    <ref name="map.element"/>
   </start>
   <!-- ============================================================= -->
   <!-- ADD FILTERING ATTRIBUTES -->

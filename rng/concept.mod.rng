@@ -4,14 +4,14 @@
 <!-- ============================================================= -->
 <!-- LONG NAME: Concept -->
 <grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-  <define name="concept-element">
+  <define name="concept.element">
     <element name="concept">
       <ref name="concept-attlist"/>
-      <ref name="title-element"/>
-      <ref name="shortdesc-element"/>
-      <ref name="conbody-element"/>
+      <ref name="title.element"/>
+      <ref name="shortdesc.element"/>
+      <ref name="conbody.element"/>
       <zeroOrMore>
-        <ref name="concept-element"/>
+        <ref name="concept.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -29,14 +29,14 @@
     </optional>
   </define>
   <!-- LONG NAME: Concept Body -->
-  <define name="conbody-element">
+  <define name="conbody.element">
     <element name="conbody">
       <ref name="conbody-attlist"/>
       <zeroOrMore>
         <ref name="all-blocks"/>
       </zeroOrMore>
       <zeroOrMore>
-        <ref name="section-element"/>
+        <ref name="section.element"/>
       </zeroOrMore>
     </element>
   </define>

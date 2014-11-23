@@ -4,7 +4,7 @@
 <!-- ============================================================= -->
 <!-- LONG NAME: Example -->
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
-  <define name="example-element">
+  <define name="example.element">
     <element name="example">
       <ref name="example-attlist"/>
       <zeroOrMore>

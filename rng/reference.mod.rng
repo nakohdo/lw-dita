@@ -4,14 +4,14 @@
 <!-- ============================================================= -->
 <!-- LONG NAME: Reference -->
 <grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-  <define name="reference-element">
+  <define name="reference.element">
     <element name="reference">
       <ref name="reference-attlist"/>
-      <ref name="title-element"/>
-      <ref name="shortdesc-element"/>
-      <ref name="refbody-element"/>
+      <ref name="title.element"/>
+      <ref name="shortdesc.element"/>
+      <ref name="refbody.element"/>
       <zeroOrMore>
-        <ref name="reference-element"/>
+        <ref name="reference.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -31,14 +31,14 @@
     </optional>
   </define>
   <!-- LONG NAME: Reference Body -->
-  <define name="refbody-element">
+  <define name="refbody.element">
     <element name="refbody">
       <ref name="refbody-attlist"/>
       <optional>
-        <ref name="refsyn-element"/>
+        <ref name="refsyn.element"/>
       </optional>
       <zeroOrMore>
-        <ref name="section-element"/>
+        <ref name="section.element"/>
       </zeroOrMore>
     </element>
   </define>

@@ -7,10 +7,10 @@
 <!-- ============================================================= -->
 <grammar xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <define name="ph">
-    <ref name="ph-element"/>
+    <ref name="ph.element"/>
   </define>
   <define name="object">
-    <ref name="object-element"/>
+    <ref name="object.element"/>
   </define>
   <define name="filter-adds">
     <empty/>
@@ -23,49 +23,49 @@
     <choice>
       <text/>
       <ref name="ph"/>
-      <ref name="image-element"/>
-      <ref name="data-element"/>
+      <ref name="image.element"/>
+      <ref name="data.element"/>
     </choice>
   </define>
   <define name="all-inline">
     <choice>
       <text/>
       <ref name="ph"/>
-      <ref name="image-element"/>
-      <ref name="xref-element"/>
-      <ref name="data-element"/>
+      <ref name="image.element"/>
+      <ref name="xref.element"/>
+      <ref name="data.element"/>
     </choice>
   </define>
   <define name="common-blocks">
     <choice>
-      <ref name="p-element"/>
-      <ref name="ul-element"/>
-      <ref name="ol-element"/>
-      <ref name="dl-element"/>
-      <ref name="pre-element"/>
+      <ref name="p.element"/>
+      <ref name="ul.element"/>
+      <ref name="ol.element"/>
+      <ref name="dl.element"/>
+      <ref name="pre.element"/>
       <ref name="object"/>
     </choice>
   </define>
   <define name="all-blocks">
     <choice>
-      <ref name="p-element"/>
-      <ref name="ul-element"/>
-      <ref name="ol-element"/>
-      <ref name="dl-element"/>
-      <ref name="pre-element"/>
+      <ref name="p.element"/>
+      <ref name="ul.element"/>
+      <ref name="ol.element"/>
+      <ref name="dl.element"/>
+      <ref name="pre.element"/>
       <ref name="object"/>
-      <ref name="simpletable-element"/>
+      <ref name="simpletable.element"/>
     </choice>
   </define>
   <define name="nested-blocks">
     <choice>
-      <ref name="p-element"/>
-      <ref name="ul-element"/>
-      <ref name="ol-element"/>
-      <ref name="dl-element"/>
-      <ref name="pre-element"/>
+      <ref name="p.element"/>
+      <ref name="ul.element"/>
+      <ref name="ol.element"/>
+      <ref name="dl.element"/>
+      <ref name="pre.element"/>
       <ref name="object"/>
-      <ref name="simpletable-element"/>
+      <ref name="simpletable.element"/>
     </choice>
   </define>
   <!-- common attributes -->
@@ -110,14 +110,14 @@
   <!-- ELEMENT DECLARATIONS -->
   <!-- ============================================================= -->
   <!-- LONG NAME: Topic -->
-  <define name="topic-element">
+  <define name="topic.element">
     <element name="topic">
       <ref name="topic-attlist"/>
-      <ref name="title-element"/>
-      <ref name="shortdesc-element"/>
-      <ref name="body-element"/>
+      <ref name="title.element"/>
+      <ref name="shortdesc.element"/>
+      <ref name="body.element"/>
       <zeroOrMore>
-        <ref name="topic-element"/>
+        <ref name="topic.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -137,7 +137,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Title -->
-  <define name="title-element">
+  <define name="title.element">
     <element name="title">
       <ref name="title-attlist"/>
       <zeroOrMore>
@@ -152,7 +152,7 @@
     </optional>
   </define>
   <!--                     LONG NAME: Short description -->
-  <define name="shortdesc-element">
+  <define name="shortdesc.element">
     <element name="shortdesc">
       <ref name="shortdesc-attlist"/>
       <zeroOrMore>
@@ -167,14 +167,14 @@
     </optional>
   </define>
   <!-- LONG NAME: Body -->
-  <define name="body-element">
+  <define name="body.element">
     <element name="body">
       <ref name="body-attlist"/>
       <zeroOrMore>
         <ref name="all-blocks"/>
       </zeroOrMore>
       <zeroOrMore>
-        <ref name="section-element"/>
+        <ref name="section.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -185,11 +185,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Section -->
-  <define name="section-element">
+  <define name="section.element">
     <element name="section">
       <ref name="section-attlist"/>
       <optional>
-        <ref name="title-element"/>
+        <ref name="title.element"/>
       </optional>
       <zeroOrMore>
         <ref name="all-blocks"/>
@@ -205,7 +205,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Paragraph -->
-  <define name="p-element">
+  <define name="p.element">
     <element name="p">
       <ref name="p-attlist"/>
       <zeroOrMore>
@@ -222,11 +222,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Unordered list -->
-  <define name="ul-element">
+  <define name="ul.element">
     <element name="ul">
       <ref name="ul-attlist"/>
       <zeroOrMore>
-        <ref name="li-element"/>
+        <ref name="li.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -239,11 +239,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Ordered list -->
-  <define name="ol-element">
+  <define name="ol.element">
     <element name="ol">
       <ref name="ol-attlist"/>
       <zeroOrMore>
-        <ref name="li-element"/>
+        <ref name="li.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -256,7 +256,7 @@
     </optional>
   </define>
   <!-- LONG NAME: List item -->
-  <define name="li-element">
+  <define name="li.element">
     <element name="li">
       <ref name="li-attlist"/>
       <zeroOrMore>
@@ -273,11 +273,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Description list -->
-  <define name="dl-element">
+  <define name="dl.element">
     <element name="dl">
       <ref name="dl-attlist"/>
       <zeroOrMore>
-        <ref name="dlentry-element"/>
+        <ref name="dlentry.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -290,11 +290,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Description entry -->
-  <define name="dlentry-element">
+  <define name="dlentry.element">
     <element name="dlentry">
       <ref name="dlentry-attlist"/>
-      <ref name="dt-element"/>
-      <ref name="dd-element"/>
+      <ref name="dt.element"/>
+      <ref name="dd.element"/>
     </element>
   </define>
   <define name="dlentry-attlist" combine="interleave">
@@ -306,7 +306,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Description term -->
-  <define name="dt-element">
+  <define name="dt.element">
     <element name="dt">
       <ref name="dt-attlist"/>
       <zeroOrMore>
@@ -323,7 +323,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Description -->
-  <define name="dd-element">
+  <define name="dd.element">
     <element name="dd">
       <ref name="dd-attlist"/>
       <zeroOrMore>
@@ -340,7 +340,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Preformatted content -->
-  <define name="pre-element">
+  <define name="pre.element">
     <element name="pre">
       <ref name="pre-attlist"/>
       <zeroOrMore>
@@ -362,14 +362,14 @@
     </optional>
   </define>
   <!-- LONG NAME: Table -->
-  <define name="simpletable-element">
+  <define name="simpletable.element">
     <element name="simpletable">
       <ref name="simpletable-attlist"/>
       <optional>
-        <ref name="sthead-element"/>
+        <ref name="sthead.element"/>
       </optional>
       <zeroOrMore>
-        <ref name="strow-element"/>
+        <ref name="strow.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -382,11 +382,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Table header row -->
-  <define name="sthead-element">
+  <define name="sthead.element">
     <element name="sthead">
       <ref name="sthead-attlist"/>
       <zeroOrMore>
-        <ref name="stentry-element"/>
+        <ref name="stentry.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -399,11 +399,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Table row -->
-  <define name="strow-element">
+  <define name="strow.element">
     <element name="strow">
       <ref name="strow-attlist"/>
       <zeroOrMore>
-        <ref name="stentry-element"/>
+        <ref name="stentry.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -416,7 +416,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Table cell -->
-  <define name="stentry-element">
+  <define name="stentry.element">
     <element name="stentry">
       <ref name="stentry-attlist"/>
       <zeroOrMore>
@@ -433,14 +433,14 @@
     </optional>
   </define>
   <!--                     LONG NAME: Object -->
-  <define name="object-element">
+  <define name="object.element">
     <element name="object">
       <ref name="object-attlist"/>
       <optional>
-        <ref name="desc-element"/>
+        <ref name="desc.element"/>
       </optional>
       <zeroOrMore>
-        <ref name="param-element"/>
+        <ref name="param.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -475,7 +475,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Description -->
-  <define name="desc-element">
+  <define name="desc.element">
     <element name="desc">
       <ref name="desc-attlist"/>
       <zeroOrMore>
@@ -490,7 +490,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Object parameter -->
-  <define name="param-element">
+  <define name="param.element">
     <element name="param">
       <ref name="param-attlist"/>
       <empty/>
@@ -506,7 +506,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Phrase content -->
-  <define name="ph-element">
+  <define name="ph.element">
     <element name="ph">
       <ref name="ph-attlist"/>
       <zeroOrMore>
@@ -522,11 +522,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Image -->
-  <define name="image-element">
+  <define name="image.element">
     <element name="image">
       <ref name="image-attlist"/>
       <optional>
-        <ref name="alt-element"/>
+        <ref name="alt.element"/>
       </optional>
     </element>
   </define>
@@ -551,7 +551,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Alternative content -->
-  <define name="alt-element">
+  <define name="alt.element">
     <element name="alt">
       <ref name="alt-attlist"/>
       <zeroOrMore>
@@ -567,11 +567,11 @@
     </optional>
   </define>
   <!-- LONG NAME: Data -->
-  <define name="data-element">
+  <define name="data.element">
     <element name="data">
       <ref name="data-attlist"/>
       <zeroOrMore>
-        <ref name="data-element"/>
+        <ref name="data.element"/>
       </zeroOrMore>
     </element>
   </define>
@@ -588,7 +588,7 @@
     </optional>
   </define>
   <!-- LONG NAME: Reference -->
-  <define name="xref-element">
+  <define name="xref.element">
     <element name="xref">
       <ref name="xref-attlist"/>
       <zeroOrMore>

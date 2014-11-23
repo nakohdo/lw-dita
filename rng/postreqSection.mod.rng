@@ -4,7 +4,7 @@
 <!-- ============================================================= -->
 <!-- LONG NAME: Task Postrequisites -->
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
-  <define name="postreq-element">
+  <define name="postreq.element">
     <element name="postreq">
       <ref name="postreq-attlist"/>
       <zeroOrMore>

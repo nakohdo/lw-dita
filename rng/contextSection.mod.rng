@@ -4,7 +4,7 @@
 <!-- ============================================================= -->
 <!-- LONG NAME: Task Context -->
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0">
-  <define name="context-element">
+  <define name="context.element">
     <element name="context">
       <ref name="context-attlist"/>
       <zeroOrMore>
