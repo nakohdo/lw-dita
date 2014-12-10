@@ -66,7 +66,7 @@
 <!ELEMENT navtitle (#PCDATA|%ph;)* >
 <!ATTLIST navtitle
              %localization;
-             class CDATA "- map/navtitle ">
+             class CDATA "- topic/navtitle ">
  
 <!--                    LONG NAME: Data  -->
 <!ELEMENT data             (data)*        >

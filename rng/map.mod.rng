@@ -141,7 +141,7 @@
   <define name="navtitle.attlist" combine="interleave">
     <ref name="localization"/>
     <optional>
-      <attribute name="class" a:defaultValue="- map/navtitle "/>
+      <attribute name="class" a:defaultValue="- topic/navtitle "/>
     </optional>
   </define>
   <!-- LONG NAME: Data -->
