@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin id="org.oasis.lwdita">
-<title>Lightweight DITA</title>
-  
-<!-- Include support name and email -->
+	<title>Lightweight DITA</title>
 
-<feature extension="package.support.name" value="Michael Priestley"/>
+	<!-- Include support name and email -->
 
-<feature extension="package.support.email" value="mpriestl@ca.ibm.com"/>
+	<feature extension="package.support.name" value="Michael Priestley" />
 
-<!-- Provide a version (default is 1.0 if not specified) -->
+	<feature extension="package.support.email" value="mpriestl@ca.ibm.com" />
 
-<feature extension="package.version" value="1.0.1"/>
+	<!-- Provide a version (default is 1.0 if not specified) -->
 
-  
-<!-- This references a catalog using the OASIS catalog format, to define
+	<feature extension="package.version" value="1.0.1" />
+
+
+	<!-- This references a catalog using the OASIS catalog format, to define
        
 public IDs and system IDs for any DTD modules included in this plugin. -->
-  
-<feature extension="dita.specialization.catalog.relative" value="catalog-dita.xml" type="file"/>
+
+	<feature extension="dita.specialization.catalog.relative" value="catalog-dita.xml" type="file" />
+	<feature extension="dita.specialization.catalog.relative" value="catalog-lw-rng.xml" type="file" />
 
 </plugin>
