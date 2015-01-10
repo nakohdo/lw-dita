@@ -1,0 +1,18 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Reference Syntax
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+refsyn.element =
+  element refsyn { refsyn.attlist, title.element?, all-blocks* }
+refsyn.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/section reference/refsyn " ]
+  attribute class { text }?

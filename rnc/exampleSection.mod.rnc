@@ -1,0 +1,16 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Example
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+example.element = element example { example.attlist, all-blocks* }
+example.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/example " ] attribute class { text }?

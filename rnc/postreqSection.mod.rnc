@@ -1,0 +1,17 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Task Postrequisites
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+postreq.element = element postreq { postreq.attlist, all-blocks* }
+postreq.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/section task/postreq " ]
+  attribute class { text }?

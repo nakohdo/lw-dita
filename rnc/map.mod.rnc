@@ -1,0 +1,98 @@
+# =============================================================
+
+# DOMAINS ATTRIBUTE OVERRIDE
+
+# =============================================================
+
+# =============================================================
+
+# EXTENSION POINTS
+
+# =============================================================
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace ditaarch = "http://dita.oasis-open.org/architecture/2005/"
+
+ph = ph.element
+filter-adds = empty
+# =============================================================
+
+# COMMON DECLARATIONS
+
+# =============================================================
+all-inline = text | ph
+# common attributes
+filters =
+  attribute props { text }?,
+  filter-adds
+reuse =
+  attribute id { xsd:NMTOKEN }?,
+  attribute conref { text }?
+reference-content =
+  attribute href { text }?,
+  attribute format { text }?,
+  attribute scope { "local" | "peer" | "external" }?
+control-variables = attribute keys { text }?
+variable-content = attribute keyref { text }?
+variable-links = attribute keyref { text }?
+localization =
+  attribute dir { text }?,
+  attribute xml:lang { text }?,
+  attribute translate { text }?
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Map
+map.element =
+  element map { map.attlist, topicmeta.element?, topicref.element* }
+map.attlist &=
+  attribute id { xsd:ID },
+  [ a:defaultValue = "1.3" ]
+  attribute ditaarch:DITAArchVersion { text }?,
+  [ a:defaultValue = "(hi-d)" ] attribute domains { text }?,
+  localization,
+  [ a:defaultValue = "- map/map " ] attribute class { text }?
+# LONG NAME: Metadata
+topicmeta.element =
+  element topicmeta {
+    topicmeta.attlist, navtitle.element, data.element*
+  }
+topicmeta.attlist &=
+  [ a:defaultValue = "- map/topicmeta " ] attribute class { text }?
+# LONG NAME: Navigation title
+navtitle.element = element navtitle { navtitle.attlist, (text | ph)* }
+navtitle.attlist &=
+  localization,
+  [ a:defaultValue = "- topic/navtitle " ] attribute class { text }?
+# LONG NAME: Data
+data.element = element data { data.attlist, data.element* }
+data.attlist &=
+  attribute name { text }?,
+  attribute value { text }?,
+  variable-content,
+  [ a:defaultValue = "- topic/data " ] attribute class { text }?
+# LONG NAME: Phrase content
+ph.element = element ph { ph.attlist, all-inline* }
+ph.attlist &=
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/ph " ] attribute class { text }?
+# LONG NAME: Topic or Map Reference
+topicref.element =
+  element topicref {
+    topicref.attlist, topicmeta.element, topicref.element*
+  }
+topicref.attlist &=
+  [ a:defaultValue = "yes" ] attribute locktitle { string "yes" }?,
+  reuse,
+  filters,
+  reference-content,
+  control-variables,
+  variable-links,
+  [ a:defaultValue = "- map/topicref " ] attribute class { text }?
+#    
+#   
+#   

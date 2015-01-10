@@ -20,5 +20,6 @@ public IDs and system IDs for any DTD modules included in this plugin. -->
 
 	<feature extension="dita.specialization.catalog.relative" value="catalog-dita.xml" type="file" />
 	<feature extension="dita.specialization.catalog.relative" value="catalog-lw-rng.xml" type="file" />
+	<feature extension="dita.specialization.catalog.relative" value="catalog-lw-rnc.xml" type="file" />
 
 </plugin>

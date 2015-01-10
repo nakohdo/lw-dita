@@ -1,0 +1,42 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Task
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace ditaarch = "http://dita.oasis-open.org/architecture/2005/"
+
+task.element =
+  element task {
+    task.attlist,
+    title.element,
+    shortdesc.element,
+    taskbody.element,
+    task.element*
+  }
+task.attlist &=
+  attribute id { xsd:ID },
+  [ a:defaultValue = "1.3" ]
+  attribute ditaarch:DITAArchVersion { text }?,
+  [ a:defaultValue = " " ] attribute domains { text }?,
+  localization,
+  [ a:defaultValue = "- topic/topic task/task " ]
+  attribute class { text }?
+# LONG NAME: Task Body
+taskbody.element =
+  element taskbody {
+    taskbody.attlist,
+    prereq.element?,
+    context.element?,
+    steps-informal.element?,
+    result.element?,
+    example.element?,
+    postreq.element?
+  }
+taskbody.attlist &=
+  localization,
+  [ a:defaultValue = "- topic/body task/taskbody " ]
+  attribute class { text }?

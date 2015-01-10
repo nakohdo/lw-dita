@@ -1,0 +1,267 @@
+# =============================================================
+
+# DOMAINS ATTRIBUTE OVERRIDE
+
+# =============================================================
+
+# =============================================================
+
+# EXTENSION POINTS
+
+# =============================================================
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace ditaarch = "http://dita.oasis-open.org/architecture/2005/"
+
+ph = ph.element
+object = object.element
+filter-adds = empty
+# =============================================================
+
+# COMMON DECLARATIONS
+
+# =============================================================
+
+# common content models
+common-inline = text | ph | image.element | data.element
+all-inline = text | ph | image.element | xref.element | data.element
+common-blocks =
+  p.element
+  | ul.element
+  | ol.element
+  | dl.element
+  | pre.element
+  | object
+all-blocks =
+  p.element
+  | ul.element
+  | ol.element
+  | dl.element
+  | pre.element
+  | object
+  | simpletable.element
+nested-blocks =
+  p.element
+  | ul.element
+  | ol.element
+  | dl.element
+  | pre.element
+  | object
+  | simpletable.element
+# common attributes
+filters =
+  attribute props { text }?,
+  filter-adds
+reuse =
+  attribute id { xsd:NMTOKEN }?,
+  attribute conref { text }?
+variable-content = attribute keyref { text }?
+variable-links = attribute keyref { text }?
+localization =
+  attribute dir { text }?,
+  attribute xml:lang { text }?,
+  attribute translate { text }?
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Topic
+topic.element =
+  element topic {
+    topic.attlist,
+    title.element,
+    shortdesc.element,
+    body.element,
+    topic.element*
+  }
+topic.attlist &=
+  attribute id { xsd:ID },
+  [ a:defaultValue = "1.3" ]
+  attribute ditaarch:DITAArchVersion { text }?,
+  [ a:defaultValue = " " ] attribute domains { text }?,
+  localization,
+  [ a:defaultValue = "- topic/topic " ] attribute class { text }?
+# LONG NAME: Title
+title.element = element title { title.attlist, common-inline* }
+title.attlist &=
+  localization,
+  [ a:defaultValue = "- topic/title " ] attribute class { text }?
+# LONG NAME: Short description
+shortdesc.element = element shortdesc { shortdesc.attlist, all-inline* }
+shortdesc.attlist &=
+  localization,
+  [ a:defaultValue = "- topic/shortdesc " ] attribute class { text }?
+# LONG NAME: Body
+body.element =
+  element body { body.attlist, all-blocks*, section.element* }
+body.attlist &=
+  localization,
+  [ a:defaultValue = "- topic/body " ] attribute class { text }?
+# LONG NAME: Section
+section.element =
+  element section { section.attlist, title.element?, all-blocks* }
+section.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/section " ] attribute class { text }?
+# LONG NAME: Paragraph
+p.element = element p { p.attlist, all-inline* }
+p.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/p " ] attribute class { text }?
+# LONG NAME: Unordered list
+ul.element = element ul { ul.attlist, li.element* }
+ul.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/ul " ] attribute class { text }?
+# LONG NAME: Ordered list
+ol.element = element ol { ol.attlist, li.element* }
+ol.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/ol " ] attribute class { text }?
+# LONG NAME: List item
+li.element = element li { li.attlist, nested-blocks* }
+li.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/li " ] attribute class { text }?
+# LONG NAME: Description list
+dl.element = element dl { dl.attlist, dlentry.element* }
+dl.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/dl " ] attribute class { text }?
+# LONG NAME: Description entry
+dlentry.element =
+  element dlentry { dlentry.attlist, dt.element, dd.element }
+dlentry.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/dlentry " ] attribute class { text }?
+# LONG NAME: Description term
+dt.element = element dt { dt.attlist, all-inline* }
+dt.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/dt " ] attribute class { text }?
+# LONG NAME: Description
+dd.element = element dd { dd.attlist, nested-blocks* }
+dd.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/dd " ] attribute class { text }?
+# LONG NAME: Preformatted content
+pre.element = element pre { pre.attlist, all-inline* }
+pre.attlist &=
+  [ a:defaultValue = "preserve" ] attribute xml:space { "preserve" }?,
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/pre " ] attribute class { text }?
+# LONG NAME: Table
+simpletable.element =
+  element simpletable {
+    simpletable.attlist, sthead.element?, strow.element*
+  }
+simpletable.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/simpletable " ] attribute class { text }?
+# LONG NAME: Table header row
+sthead.element = element sthead { sthead.attlist, stentry.element* }
+sthead.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/sthead " ] attribute class { text }?
+# LONG NAME: Table row
+strow.element = element strow { strow.attlist, stentry.element* }
+strow.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/strow " ] attribute class { text }?
+# LONG NAME: Table cell
+stentry.element = element stentry { stentry.attlist, common-blocks* }
+stentry.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/stentry " ] attribute class { text }?
+# LONG NAME: Object
+object.element =
+  element object { object.attlist, desc.element?, param.element* }
+object.attlist &=
+  attribute data { text }?,
+  attribute type { text }?,
+  attribute height { xsd:NMTOKEN }?,
+  attribute width { xsd:NMTOKEN }?,
+  attribute name { text }?,
+  attribute usemap { text }?,
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/object " ] attribute class { text }?
+# LONG NAME: Description
+desc.element = element desc { desc.attlist, common-inline* }
+desc.attlist &=
+  localization,
+  [ a:defaultValue = "- topic/desc " ] attribute class { text }?
+# LONG NAME: Object parameter
+param.element = element param { param.attlist, empty }
+param.attlist &=
+  attribute name { text },
+  attribute value { text }?,
+  [ a:defaultValue = "- topic/param " ] attribute class { text }?
+# LONG NAME: Phrase content
+ph.element = element ph { ph.attlist, all-inline* }
+ph.attlist &=
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/ph " ] attribute class { text }?
+# LONG NAME: Image
+image.element = element image { image.attlist, alt.element? }
+image.attlist &=
+  attribute href { text }?,
+  attribute height { xsd:NMTOKEN }?,
+  attribute width { xsd:NMTOKEN }?,
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/image " ] attribute class { text }?
+# LONG NAME: Alternative content
+alt.element = element alt { alt.attlist, common-inline* }
+alt.attlist &=
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/alt " ] attribute class { text }?
+# LONG NAME: Data
+data.element = element data { data.attlist, data.element* }
+data.attlist &=
+  attribute name { text }?,
+  attribute value { text }?,
+  variable-content,
+  [ a:defaultValue = "- topic/data " ] attribute class { text }?
+# LONG NAME: Reference
+xref.element = element xref { xref.attlist, common-inline* }
+xref.attlist &=
+  attribute href { text }?,
+  attribute format { text }?,
+  attribute scope { "local" | "peer" | "external" }?,
+  localization,
+  variable-links,
+  [ a:defaultValue = "- topic/xref " ] attribute class { text }?

@@ -1,0 +1,34 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Concept
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace ditaarch = "http://dita.oasis-open.org/architecture/2005/"
+
+concept.element =
+  element concept {
+    concept.attlist,
+    title.element,
+    shortdesc.element,
+    conbody.element,
+    concept.element*
+  }
+concept.attlist &=
+  attribute id { xsd:ID },
+  [ a:defaultValue = "1.3" ]
+  attribute ditaarch:DITAArchVersion { text }?,
+  domains-att,
+  localization,
+  [ a:defaultValue = "- topic/topic concept/concept " ]
+  attribute class { text }?
+# LONG NAME: Concept Body
+conbody.element =
+  element conbody { conbody.attlist, all-blocks*, section.element* }
+conbody.attlist &=
+  localization,
+  [ a:defaultValue = "- topic/body concept/conbody " ]
+  attribute class { text }?

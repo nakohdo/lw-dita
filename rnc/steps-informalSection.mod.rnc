@@ -1,0 +1,20 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Task Steps
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+steps-informal.element =
+  element steps-informal {
+    steps-informal.attlist, p.element?, (ol.element | ul.element)
+  }
+steps-informal.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/section task/steps-informal " ]
+  attribute class { text }?

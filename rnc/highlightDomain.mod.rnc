@@ -1,0 +1,48 @@
+# highlighting domain - class prefix hi-d
+
+# add to ph element in doctype shell: 
+# b | u | i | sup | sub 
+
+# add to included-domains in doctype shell:
+# (topic hi-d)
+
+# LONG NAME: Bold content
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+
+## DOMAIN EXTENSION PATTERNS
+div {
+  hi-d-ph =
+    b.element | i.element | sup.element | sub.element | u.element
+  ph |= hi-d-ph
+}
+b.element = element b { b.attlist, all-inline* }
+b.attlist &=
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/ph hi-d/b " ] attribute class { text }?
+# LONG NAME: Italic content
+i.element = element i { i.attlist, all-inline* }
+i.attlist &=
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/ph hi-d/i " ] attribute class { text }?
+# LONG NAME: Underlined content
+u.element = element u { u.attlist, all-inline* }
+u.attlist &=
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/ph hi-d/u " ] attribute class { text }?
+# LONG NAME: Superscript content
+sup.element = element sup { sup.attlist, all-inline* }
+sup.attlist &=
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/ph hi-d/sup " ] attribute class { text }?
+# LONG NAME: Subscript content
+sub.element = element sub { sub.attlist, all-inline* }
+sub.attlist &=
+  localization,
+  variable-content,
+  [ a:defaultValue = "- topic/ph hi-d/sub " ] attribute class { text }?

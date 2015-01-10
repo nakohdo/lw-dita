@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML Catalog for Lightweight DITA-NG Relax NG compact schemas-->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  
+  <!-- Add mapping for: rnc/basemap.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:basemap.rnc" uri="rnc/basemap.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:basemap.rnc:1.2" uri="rnc/basemap.rnc"/>
+  
+  <!-- Add mapping for: rnc/basetopic.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:basetopic.rnc" uri="rnc/basetopic.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:basetopic.rnc:1.2" uri="rnc/basetopic.rnc"/>
+  
+  <!-- Add mapping for: rnc/commonElements.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:commonElements.mod.rnc" uri="rnc/commonElements.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:commonElements.mod.rnc:1.2" uri="rnc/commonElements.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/delayResolutionDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:delayResolutionDomain.mod.rnc" uri="rnc/delayResolutionDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:delayResolutionDomain.mod.rnc:1.2" uri="rnc/delayResolutionDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/hazardstatementDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:hazardstatementDomain.mod.rnc" uri="rnc/hazardstatementDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:hazardstatementDomain.mod.rnc:1.2" uri="rnc/hazardstatementDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/highlightDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:highlightDomain.mod.rnc" uri="rnc/highlightDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:highlightDomain.mod.rnc:1.2" uri="rnc/highlightDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/indexingDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:indexingDomain.mod.rnc" uri="rnc/indexingDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:indexingDomain.mod.rnc:1.2" uri="rnc/indexingDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/map.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:map.mod.rnc" uri="rnc/map.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:map.mod.rnc:1.2" uri="rnc/map.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/mapGroup.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:mapGroup.mod.rnc" uri="rnc/mapGroup.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:mapGroup.mod.rnc:1.2" uri="rnc/mapGroup.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/metaDecl.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:metaDecl.mod.rnc" uri="rnc/metaDecl.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:metaDecl.mod.rnc:1.2" uri="rnc/metaDecl.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/tblDecl.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:tblDecl.mod.rnc" uri="rnc/tblDecl.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:tblDecl.mod.rnc:1.2" uri="rnc/tblDecl.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/topic.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:topic.mod.rnc" uri="rnc/topic.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:topic.mod.rnc:1.2" uri="rnc/topic.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/utilitiesDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:utilitiesDomain.mod.rnc" uri="rnc/utilitiesDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:utilitiesDomain.mod.rnc:1.2" uri="rnc/utilitiesDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/bookmap.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:bookmap.mod.rnc" uri="rnc/bookmap.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:bookmap.mod.rnc:1.2" uri="rnc/bookmap.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/bookmap.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:bookmap.rnc" uri="rnc/bookmap.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:bookmap.rnc:1.2" uri="rnc/bookmap.rnc"/>
+  
+  <!-- Add mapping for: rnc/ditaval/rnc/ditaval.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:ditaval.rnc" uri="rnc/ditaval/rnc/ditaval.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:ditaval.rnc:1.2" uri="rnc/ditaval/rnc/ditaval.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningAssessment.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningAssessment.mod.rnc" uri="rnc/learningAssessment.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningAssessment.mod.rnc:1.2" uri="rnc/learningAssessment.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningAssessment.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningAssessment.rnc" uri="rnc/learningAssessment.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningAssessment.rnc:1.2" uri="rnc/learningAssessment.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningBase.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningBase.mod.rnc" uri="rnc/learningBase.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningBase.mod.rnc:1.2" uri="rnc/learningBase.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningBookmap.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningBookmap.rnc" uri="rnc/learningBookmap.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningBookmap.rnc:1.2" uri="rnc/learningBookmap.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningContent.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningContent.mod.rnc" uri="rnc/learningContent.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningContent.mod.rnc:1.2" uri="rnc/learningContent.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningContent.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningContent.rnc" uri="rnc/learningContent.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningContent.rnc:1.2" uri="rnc/learningContent.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningDomain.mod.rnc" uri="rnc/learningDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningDomain.mod.rnc:1.2" uri="rnc/learningDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningInteractionBaseDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningDomain.mod.rnc" uri="rnc/learningInteractionBaseDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningDomain.mod.rnc:1.2" uri="rnc/learningInteractionBaseDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningMap.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningMap.rnc" uri="rnc/learningMap.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningMap.rnc:1.2" uri="rnc/learningMap.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningMapdomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningMapDomain.mod.rnc" uri="rnc/learningMapdomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningMapDomain.mod.rnc:1.2" uri="rnc/learningMapdomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningMetadataDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningMetadataDomain.mod.rnc" uri="rnc/learningMetadataDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningMetadataDomain.mod.rnc:1.2" uri="rnc/learningMetadataDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningOverview.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningOverview.mod.rnc" uri="rnc/learningOverview.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningOverview.mod.rnc:1.2" uri="rnc/learningOverview.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningOverview.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningOverview.rnc" uri="rnc/learningOverview.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningOverview.rnc:1.2" uri="rnc/learningOverview.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningPlan.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningPlan.mod.rnc" uri="rnc/learningPlan.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningPlan.mod.rnc:1.2" uri="rnc/learningPlan.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningPlan.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningPlan.rnc" uri="rnc/learningPlan.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningPlan.rnc:1.2" uri="rnc/learningPlan.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningSummary.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningSummary.mod.rnc" uri="rnc/learningSummary.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningSummary.mod.rnc:1.2" uri="rnc/learningSummary.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/learningSummary.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningSummary.rnc" uri="rnc/learningSummary.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:learningSummary.rnc:1.2" uri="rnc/learningSummary.rnc"/>
+  
+  <!-- Add mapping for: rnc/machineryTask.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:machineryTask.rnc" uri="rnc/machineryTask.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:machineryTask.rnc:1.2" uri="rnc/machineryTask.rnc"/>
+  
+  <!-- Add mapping for: rnc/machineryTaskbodyConstraint.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:machineryTaskbodyConstraint.mod.rnc" uri="rnc/machineryTaskbodyConstraint.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:machineryTaskbodyConstraint.mod.rnc:1.2" uri="rnc/machineryTaskbodyConstraint.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/classifyDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:classifyDomain.mod.rnc" uri="rnc/classifyDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:classifyDomain.mod.rnc:1.2" uri="rnc/classifyDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/classifyMap.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:classifyMap.rnc" uri="rnc/classifyMap.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:classifyMap.rnc:1.2" uri="rnc/classifyMap.rnc"/>
+  
+  <!-- Add mapping for: rnc/subjectScheme.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:subjectScheme.mod.rnc" uri="rnc/subjectScheme.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:subjectScheme.mod.rnc:1.2" uri="rnc/subjectScheme.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/subjectScheme.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:subjectScheme.rnc" uri="rnc/subjectScheme.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:subjectScheme.rnc:1.2" uri="rnc/subjectScheme.rnc"/>
+  
+  <!-- Add mapping for: rnc/abbreviateDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:abbreviateDomain.mod.rnc" uri="rnc/abbreviateDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:abbreviateDomain.mod.rnc:1.2" uri="rnc/abbreviateDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/concept.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:concept.mod.rnc" uri="rnc/concept.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:concept.mod.rnc:1.2" uri="rnc/concept.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/concept.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:concept.rnc" uri="rnc/concept.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:concept.rnc:1.2" uri="rnc/concept.rnc"/>
+  
+  <!-- Add mapping for: rnc/ditabase.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:ditabase.rnc" uri="rnc/ditabase.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:ditabase.rnc:1.2" uri="rnc/ditabase.rnc"/>
+  
+  <!-- Add mapping for: rnc/generalTask.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:generalTask.rnc" uri="rnc/generalTask.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:generalTask.rnc:1.2" uri="rnc/generalTask.rnc"/>
+  
+  <!-- Add mapping for: rnc/glossary.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossary.rnc" uri="rnc/glossary.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossary.rnc:1.2" uri="rnc/glossary.rnc"/>
+  
+  <!-- Add mapping for: rnc/glossentry.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossentry.mod.rnc" uri="rnc/glossentry.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossentry.mod.rnc:1.2" uri="rnc/glossentry.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/glossentry.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossentry.rnc" uri="rnc/glossentry.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossentry.rnc:1.2" uri="rnc/glossentry.rnc"/>
+  
+  <!-- Add mapping for: rnc/glossgroup.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossgroup.mod.rnc" uri="rnc/glossgroup.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossgroup.mod.rnc:1.2" uri="rnc/glossgroup.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/glossgroup.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossgroup.rnc" uri="rnc/glossgroup.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossgroup.rnc:1.2" uri="rnc/glossgroup.rnc"/>
+  
+  <!-- Add mapping for: rnc/glossrefDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossrefDomain.mod.rnc" uri="rnc/glossrefDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:glossrefDomain.mod.rnc:1.2" uri="rnc/glossrefDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/map.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:map.rnc" uri="rnc/map.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:map.rnc:1.2" uri="rnc/map.rnc"/>
+  
+  <!-- Add mapping for: rnc/programmingDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:programmingDomain.mod.rnc" uri="rnc/programmingDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:programmingDomain.mod.rnc:1.2" uri="rnc/programmingDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/reference.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:reference.mod.rnc" uri="rnc/reference.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:reference.mod.rnc:1.2" uri="rnc/reference.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/reference.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:reference.rnc" uri="rnc/reference.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:reference.rnc:1.2" uri="rnc/reference.rnc"/>
+  
+  <!-- Add mapping for: rnc/softwareDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:softwareDomain.mod.rnc" uri="rnc/softwareDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:softwareDomain.mod.rnc:1.2" uri="rnc/softwareDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/strictTaskbodyConstraint.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:strictTaskbodyConstraint.mod.rnc" uri="rnc/strictTaskbodyConstraint.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:strictTaskbodyConstraint.mod.rnc:1.2" uri="rnc/strictTaskbodyConstraint.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/task.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:task.mod.rnc" uri="rnc/task.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:task.mod.rnc:1.2" uri="rnc/task.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/task.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:task.rnc" uri="rnc/task.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:task.rnc:1.2" uri="rnc/task.rnc"/>
+  
+  <!-- Add mapping for: rnc/taskreqDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:taskreqDomain.mod.rnc" uri="rnc/taskreqDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:taskreqDomain.mod.rnc:1.2" uri="rnc/taskreqDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/topic.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:topic.rnc" uri="rnc/topic.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:topic.rnc:1.2" uri="rnc/topic.rnc"/>
+  
+  <!-- Add mapping for: rnc/uiDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:uiDomain.mod.rnc" uri="rnc/uiDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:uiDomain.mod.rnc:1.2" uri="rnc/uiDomain.mod.rnc"/>
+  
+  <!-- Add mapping for: rnc/xhtml1-transitional.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:xhtml1-transitional.rnc" uri="rnc/xhtml1-transitional.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:xhtml1-transitional.rnc:1.2" uri="rnc/xhtml1-transitional.rnc"/>
+  
+  <!-- Add mapping for: rnc/xnalDomain.mod.rnc-->
+  <system systemId="urn:dita-ng:lw-dita:rnc:xnalDomain.mod.rnc" uri="rnc/xnalDomain.mod.rnc"/>
+  <system systemId="urn:dita-ng:lw-dita:rnc:xnalDomain.mod.rnc:1.2" uri="rnc/xnalDomain.mod.rnc"/></catalog>

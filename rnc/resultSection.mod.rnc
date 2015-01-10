@@ -1,0 +1,17 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Task Result
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+result.element = element result { result.attlist, all-blocks* }
+result.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/section task/result " ]
+  attribute class { text }?

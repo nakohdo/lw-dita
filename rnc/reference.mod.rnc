@@ -1,0 +1,34 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Reference
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace ditaarch = "http://dita.oasis-open.org/architecture/2005/"
+
+reference.element =
+  element reference {
+    reference.attlist,
+    title.element,
+    shortdesc.element,
+    refbody.element,
+    reference.element*
+  }
+reference.attlist &=
+  attribute id { xsd:ID },
+  [ a:defaultValue = "1.3" ]
+  attribute ditaarch:DITAArchVersion { text }?,
+  [ a:defaultValue = " " ] attribute domains { text }?,
+  localization,
+  [ a:defaultValue = "- topic/topic reference/reference " ]
+  attribute class { text }?
+# LONG NAME: Reference Body
+refbody.element =
+  element refbody { refbody.attlist, refsyn.element?, section.element* }
+refbody.attlist &=
+  localization,
+  [ a:defaultValue = "- topic/body reference/refbody " ]
+  attribute class { text }?

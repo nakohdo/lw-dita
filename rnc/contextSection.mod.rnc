@@ -1,0 +1,17 @@
+# =============================================================
+
+# ELEMENT DECLARATIONS
+
+# =============================================================
+
+# LONG NAME: Task Context
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+context.element = element context { context.attlist, all-blocks* }
+context.attlist &=
+  localization,
+  filters,
+  reuse,
+  [ a:defaultValue = "- topic/section task/context " ]
+  attribute class { text }?
