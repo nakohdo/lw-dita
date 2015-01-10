@@ -1,6 +1,7 @@
 # Lightweight DITA
 
 - First stab at adding a XML catalog for RNG mapping.
+- Convert all .rng files to .rnc using Trang.
 
 ## Resources
 * [OASIS Lightweight DITA SC](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita-lightweight-dita)
